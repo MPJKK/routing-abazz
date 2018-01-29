@@ -1,0 +1,12 @@
+<h2>
+    Hae pysäkin reitit
+</h2>
+
+<ul>
+    <li *ngFor="let reitti of reittiTaulukko">
+        <h4>{{reitti.name}}</h4>
+        <p>{{reitti.route.longName}}</p>
+        {{ reitti.lat }}
+        {{ reitti.lon }}
+    </li>
+</ul>
