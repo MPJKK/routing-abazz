@@ -8,18 +8,17 @@ import {DigitransitService} from '../services/digitransit.service';
 })
 export class RoutesComponent implements OnInit {
 
-    pysakki: string;
     reittiTaulukko: any;
+    lat: number;
+    lon: number;
 
     constructor(private digitransitService: DigitransitService) {
     }
 
     ngOnInit() {
-        this.digitransitService.getRoutes(this.pysakki).subscribe(response => {
+        this.digitransitService.getRoutes().subscribe(response => {
             console.log(response.data['stops'][0].patterns);
-            this.reittiTaulukko = response.data['stops'][0].patterns;
-            this.digitransitService.lat = response.data['stops'][0].lat;
-            this.digitransitService.lon = response.data['stops'][0].lon;
+            this.reittiTaulukko = response.data['stops'];
         });
     }
 

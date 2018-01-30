@@ -1,12 +1,20 @@
+<article *ngFor="let pysakki of reittiTaulukko">
+
+
 <h2>
-    Hae pysäkin reitit
+    {{ pysakki.name }}
 </h2>
 
+<agm-map [latitude]="pysakki.lat" [longitude]="pysakki.lon" [zoom]="15">
+    <agm-marker [latitude]="pysakki.lat" [longitude]="pysakki.lon"></agm-marker>
+</agm-map>
+
 <ul>
-    <li *ngFor="let reitti of reittiTaulukko">
+    <li *ngFor="let reitti of pysakki.patterns">
         <h4>{{reitti.name}}</h4>
         <p>{{reitti.route.longName}}</p>
-        {{ reitti.lat }}
-        {{ reitti.lon }}
     </li>
 </ul>
+
+
+</article>

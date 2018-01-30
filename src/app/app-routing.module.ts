@@ -6,11 +6,16 @@ import {RoutesComponent} from './routes/routes.component';
 const routes: Routes = [
     {
         path: '',
-        component: SetupComponent
+        pathMatch: 'full',
+        redirectTo: 'setup',
+    },
+    {
+        path: 'setup',
+        component: SetupComponent,
     }, {
-  path: 'routes',
-        component: RoutesComponent
-    }
+        path: 'routes',
+        component: RoutesComponent,
+    },
 ];
 
 @NgModule({
