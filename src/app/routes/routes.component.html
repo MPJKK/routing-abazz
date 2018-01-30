@@ -12,7 +12,7 @@
 <ul>
     <li *ngFor="let reitti of pysakki.patterns">
         <h4>{{reitti.name}}</h4>
-        <p>{{reitti.route.longName}}</p>
+        <p>{{reitti.directionId | routeDirection}} {{reitti.route.longName}} </p>
     </li>
 </ul>
 

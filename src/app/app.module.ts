@@ -11,6 +11,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {DigitransitService} from './services/digitransit.service';
 import {FormsModule} from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
+import { RouteDirectionPipe } from './pipes/route-direction.pipe';
+
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { AgmCoreModule } from '@agm/core';
     AppComponent,
     TopBarComponent,
     SetupComponent,
-    RoutesComponent
+    RoutesComponent,
+    RouteDirectionPipe
   ],
   imports: [
     BrowserModule,
