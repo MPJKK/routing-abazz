@@ -12,6 +12,8 @@ import {DigitransitService} from './services/digitransit.service';
 import {FormsModule} from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 import { RouteDirectionPipe } from './pipes/route-direction.pipe';
+import {MatIconModule, MatList, MatListModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -29,7 +31,11 @@ import { RouteDirectionPipe } from './pipes/route-direction.pipe';
       HttpClientModule,
       FormsModule,
       AgmCoreModule.forRoot({
-          apiKey: 'AIzaSyCy4H4LMxlt57LQHCLh71lpBvf3GYp1Ebo'})
+          apiKey: 'AIzaSyCy4H4LMxlt57LQHCLh71lpBvf3GYp1Ebo'}
+          ),
+    MatListModule,
+      MatIconModule,
+      BrowserAnimationsModule
   ],
   providers: [DigitransitService],
   bootstrap: [AppComponent]

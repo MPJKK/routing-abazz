@@ -1,20 +1,28 @@
 <article *ngFor="let pysakki of reittiTaulukko">
 
-
 <h2>
     {{ pysakki.name }}
 </h2>
 
-<agm-map [latitude]="pysakki.lat" [longitude]="pysakki.lon" [zoom]="15">
-    <agm-marker [latitude]="pysakki.lat" [longitude]="pysakki.lon"></agm-marker>
-</agm-map>
+    <div fxFlex>
+        <agm-map [latitude]="pysakki.lat" [longitude]="pysakki.lon" [zoom]="15">
+            <agm-marker [latitude]="pysakki.lat" [longitude]="pysakki.lon"></agm-marker>
+        </agm-map>
+    </div>
 
-<ul>
-    <li *ngFor="let reitti of pysakki.patterns">
-        <h4>{{reitti.name}}</h4>
-        <p>{{reitti.directionId | routeDirection}} {{reitti.route.longName}} </p>
-    </li>
-</ul>
+
+    <div fxLayout="row">
+    <div fxFlex>
+        <mat-list>
+        <mat-list-item *ngFor="let reitti of pysakki.patterns">
+            <h4>{{reitti.name}}</h4>
+            <p><mat-icon>{{reitti.directionId | routeDirection}}</mat-icon> {{reitti.route.longName}} </p>
+        </mat-list-item>
+        </mat-list>
+    </div>
+</div>
+
+
 
 
 </article>

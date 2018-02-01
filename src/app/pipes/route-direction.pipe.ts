@@ -7,9 +7,9 @@ export class RouteDirectionPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
     if (value === 0) {
-      return 'Going to';
+      return 'arrow_forward';
     } else {
-      return 'Coming from';
+      return 'arrow_back';
     }
   }
 
